@@ -1,0 +1,44 @@
+<div class="container">
+    <h2>Billing Management</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Shop ID</th>
+                <th>Owner</th>
+                <th>Level</th>
+                <th>Block</th>
+                <th>Arrears</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let shop of shops">
+                <td>{{ shop.shopId }}</td>
+                <td>{{ shop.owner }}</td>
+                <td>{{ shop.level }}</td>
+                <td>{{ shop.block }}</td>
+                <td>{{ shop.arrears | currency }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Add Shop</h3>
+    <form (ngSubmit)="addShop(newShop)">
+        <div class="form-group">
+            <label for="owner">Owner:</label>
+            <input type="text" id="owner" class="form-control" [(ngModel)]="newShop.owner" name="owner" required>
+        </div>
+        <div class="form-group">
+            <label for="level">Level:</label>
+            <input type="text" id="level" class="form-control" [(ngModel)]="newShop.level" name="level" required>
+        </div>
+        <div class="form-group">
+            <label for="block">Block:</label>
+            <input type="text" id="block" class="form-control" [(ngModel)]="newShop.block" name="block" required>
+        </div>
+        <div class="form-group">
+            <label for="arrears">Arrears:</label>
+            <input type="number" id="arrears" class="form-control" [(ngModel)]="newShop.arrears" name="arrears" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Shop</button>
+    </form>
+</div>
