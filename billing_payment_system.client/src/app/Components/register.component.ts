@@ -13,7 +13,7 @@ export class RegisterComponent {
 
   register() {
     this.authService.register(this.user).subscribe(() => {
-      // Redirect to login or other component
+
     });
   }
 }

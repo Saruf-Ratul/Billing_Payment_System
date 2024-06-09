@@ -7,7 +7,7 @@ import { Shop } from '../Models/Shop';
   providedIn: 'root'
 })
 export class BillingService {
-  private apiUrl = 'https://your-api-url/billing';
+  private apiUrl = 'https://localhost:44356/billing';
 
   constructor(private http: HttpClient) { }
 
